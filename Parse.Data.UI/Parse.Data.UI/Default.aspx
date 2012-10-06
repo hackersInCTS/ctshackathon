@@ -57,25 +57,25 @@
                 var grid = jQuery("#<%= JQGrid1.ClientID %>");
 
                 var image = grid.getRowData(id)["item"];                
-                //$('[id*="img1"]')[0].src = image;
-                //$('[id*="anchor1"]')[0].href = image;
-                debugger;
-                $.ajax({
-                    type: "POST",
-                    url: "Default.aspx/ShowImage",
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    //data: "{ 'objectId':'" + grid.getRowData(id)["objectId"] + "', 'image':'" + grid.getRowData(id)["item"] + "'}",
-                    data:"{}",
-                    error: function (jqXHR, textStatus, errorThrown) { debugger; }
-                }).done(function () {
-                    
-                    alert("Data Shown!");
-                });
+                $('[id*="img1"]')[0].src = image;
+                $('[id*="anchor1"]')[0].href = image;
+//                debugger;
+//                $.ajax({
+//                    type: "POST",
+//                    url: "Default.aspx/ShowImage",
+//                    contentType: "application/json; charset=utf-8",
+//                    dataType: "json",
+//                    //data: "{ 'objectId':'" + grid.getRowData(id)["objectId"] + "', 'image':'" + grid.getRowData(id)["item"] + "'}",
+//                    data:"{}",
+//                    error: function (jqXHR, textStatus, errorThrown) { debugger; }
+//                }).done(function () {
+//                    
+//                    alert("Data Shown!");
+//                });
             
         }
         function getAudioData(id) {
-            debugger;
+          
                 var grid = jQuery("#<%= JQGrid2.ClientID %>");
                 var stream = "~/App_Data/recording1597205431.3gpp";
                 var type = grid.getRowData(id)["type"];
