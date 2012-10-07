@@ -39,6 +39,22 @@ Parse.Data.UI
  Module used to define the properties that are available in the My Namespace for Web projects.
  </summary>
 	<remarks></remarks>
+</member><member name="F:Parse.Data.UI.Login.RegisterHyperLink">
+	<summary>
+RegisterHyperLink control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI.Login.LoginUser">
+	<summary>
+LoginUser control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="P:Parse.Data.UI.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
@@ -52,6 +68,30 @@ Parse.Data.UI
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="F:Parse.Data.UI.ChangePassword.ChangeUserPassword">
+	<summary>
+ChangeUserPassword control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI.Register.RegisterUser">
+	<summary>
+RegisterUser control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI.Register.RegisterUserWizardStep">
+	<summary>
+RegisterUserWizardStep control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Parse.Data.UI._Default.Jqgrid1">
 	<summary>
 Jqgrid1 control.
@@ -79,14 +119,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Parse.Data.UI._Default.img1">
 	<summary>
 img1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Parse.Data.UI.ChangePassword.ChangeUserPassword">
-	<summary>
-ChangeUserPassword control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -127,38 +159,6 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Parse.Data.UI.Site.MainContent">
 	<summary>
 MainContent control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Parse.Data.UI.Register.RegisterUser">
-	<summary>
-RegisterUser control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Parse.Data.UI.Register.RegisterUserWizardStep">
-	<summary>
-RegisterUserWizardStep control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Parse.Data.UI.Login.RegisterHyperLink">
-	<summary>
-RegisterHyperLink control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="F:Parse.Data.UI.Login.LoginUser">
-	<summary>
-LoginUser control.
 </summary>
 	<remarks>
 Auto-generated field.
