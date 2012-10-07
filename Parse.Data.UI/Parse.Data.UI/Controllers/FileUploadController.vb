@@ -7,15 +7,16 @@ Public Class FileUploadController
 
     '
     ' GET: /FileUpload/Details/5
-    Function UploadImage() As ActionResult
+    Function UploadImage(ByVal images As List(Of String)) As ActionResult
         Try
             CreateDirectory("~/App_Data/Image/")
             Dim filePaths = New List(Of String)
-            For Each item As HttpPostedFileBase In Request.Files
-                Dim filePath = String.Format("~/App_Data/Image/{0}_{1}", Guid.NewGuid(), item.FileName)
+            For Each item As String In Request.Files
+                Dim filePath = String.Format("~/App_Data/Image/{0}.jpg", Guid.NewGuid())
 
                 Using destination = New FileStream(HostingEnvironment.MapPath(filePath), FileMode.Create)
-                    item.InputStream.CopyTo(destination)
+                    Dim bytes = Convert.FromBase64String(item)
+                    destination.Write(bytes, 0, bytes.Length)
                     destination.Flush()
                     destination.Close()
                 End Using
