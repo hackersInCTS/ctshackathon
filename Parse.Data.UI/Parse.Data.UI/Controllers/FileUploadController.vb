@@ -11,7 +11,7 @@ Public Class FileUploadController
         Try
             CreateDirectory("~/App_Data/Image/")
             Dim filePaths = New List(Of String)
-            For Each item As String In Request.Files
+            For Each item As String In images
                 Dim filePath = String.Format("~/App_Data/Image/{0}.jpg", Guid.NewGuid())
 
                 Using destination = New FileStream(HostingEnvironment.MapPath(filePath), FileMode.Create)
