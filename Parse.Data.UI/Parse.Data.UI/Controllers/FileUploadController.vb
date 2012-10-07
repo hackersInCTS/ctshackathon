@@ -8,28 +8,22 @@ Public Class FileUploadController
     '
     ' GET: /FileUpload/Details/5
     Function UploadImage(ByVal images As List(Of String)) As ActionResult
-        Try
-            CreateDirectory("~/App_Data/Image/")
-            Dim filePaths = New List(Of String)
-            For Each item As String In images
-                Dim filePath = String.Format("~/App_Data/Image/{0}.jpg", Guid.NewGuid())
+        CreateDirectory("~/App_Data/Image/")
+        Dim filePaths = New List(Of String)
+        For Each item As String In images
+            Dim filePath = String.Format("~/App_Data/Image/{0}.jpg", Guid.NewGuid())
 
-                Using destination = New FileStream(HostingEnvironment.MapPath(filePath), FileMode.Create)
-                    Dim bytes = Convert.FromBase64String(item)
-                    destination.Write(bytes, 0, bytes.Length)
-                    destination.Flush()
-                    destination.Close()
-                End Using
+            Using destination = New FileStream(HostingEnvironment.MapPath(filePath), FileMode.Create)
+                Dim bytes = Convert.FromBase64String(item)
+                destination.Write(bytes, 0, bytes.Length)
+                destination.Flush()
+                destination.Close()
+            End Using
 
-                filePaths.Add(filePath)
-            Next
+            filePaths.Add(filePath)
+        Next
 
-            Return Json(filePaths)
-        Catch ex As Exception
-            Return Json(ex.Message)
-        End Try
-
-        Return View()
+        Return Json(filePaths)
     End Function
 
     Private Shared Sub CreateDirectory(ByVal folder As String)
