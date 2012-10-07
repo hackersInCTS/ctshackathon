@@ -14,6 +14,15 @@ Option Explicit On
 Partial Public Class _Default
 
     '''<summary>
+    '''Button1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button1 As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
     '''Jqgrid1 control.
     '''</summary>
     '''<remarks>
@@ -32,13 +41,13 @@ Partial Public Class _Default
     Protected WithEvents LossLocationCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LossLocation control.
+    '''LossLocationLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LossLocation As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LossLocationLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''LossDateCaption control.
@@ -50,13 +59,13 @@ Partial Public Class _Default
     Protected WithEvents LossDateCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LossDate control.
+    '''LossDateLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LossDate As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LossDateLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''LossTimeCaption control.
@@ -68,13 +77,13 @@ Partial Public Class _Default
     Protected WithEvents LossTimeCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''LossTime control.
+    '''LossTimeLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents LossTime As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents LossTimeLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''anchor1 control.
@@ -104,13 +113,13 @@ Partial Public Class _Default
     Protected WithEvents PolicyNumberCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''PolicyNumber control.
+    '''PolicyNumberLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents PolicyNumber As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents PolicyNumberLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''VehicleMakeCaption control.
@@ -122,13 +131,13 @@ Partial Public Class _Default
     Protected WithEvents VehicleMakeCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''VehicleMake control.
+    '''VehicleMakeLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VehicleMake As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents VehicleMakeLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''VehicleModelCaption control.
@@ -140,13 +149,13 @@ Partial Public Class _Default
     Protected WithEvents VehicleModelCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''VehicleModel control.
+    '''VehicleModelLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VehicleModel As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents VehicleModelLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''VINCaption control.
@@ -158,13 +167,13 @@ Partial Public Class _Default
     Protected WithEvents VINCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''VIN control.
+    '''VINLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VIN As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents VINLabel As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''VehicleColorCaption control.
@@ -176,11 +185,11 @@ Partial Public Class _Default
     Protected WithEvents VehicleColorCaption As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''VehicleColor control.
+    '''VehicleColorLabel control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents VehicleColor As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents VehicleColorLabel As Global.System.Web.UI.WebControls.Label
 End Class

@@ -33,10 +33,10 @@
         <cc1:JQGridColumn DataField="LossTime"  ></cc1:JQGridColumn>
         <cc1:JQGridColumn DataField="VehicleMake"  ></cc1:JQGridColumn>
         <cc1:JQGridColumn DataField="VehicleModel"  ></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="VehicleColor" Visible=false  ></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="VehicleVIN" Visible=false  ></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="LossAudio" Visible=false  ></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="LossImages" Visible=false ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleColor" Visible="false"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleVIN" Visible="false"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossAudio" Visible="false"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossImages" Visible="false" ></cc1:JQGridColumn>
         
     </Columns>
     </cc1:JQGrid>
@@ -54,10 +54,10 @@
     </Columns>
     </cc1:JQGrid>--%>
     <script>
-        function forceSort() {
-            var grid = $("#<%= JQGrid1.ClientID %>");
-            grid.sortGrid("LossDate", true);
-        }
+//        function forceSort() {
+//            var grid = $("#<%= JQGrid1.ClientID %>");
+//            grid.sortGrid("LossDate", true);
+//        }
         $(function () {
             $("#tabs").tabs();
         });
@@ -66,22 +66,34 @@
 
         });
 
-        function getRowData(id) {            
-                var grid = jQuery("#<%= JQGrid1.ClientID %>");
-                $('[id$="PolicyNumber"]').text(grid.getRowData(id)["PolicyKey"]);
-                $('[id$="VehicleMakeLabel"]').text(grid.getRowData(id)["VehicleMake"]);
-                $('[id$="VehicleModelLabel"]').text(grid.getRowData(id)["VehicleModel"]);
-                $('[id$="VehicleColor"]').text(grid.getRowData(id)["VehicleColor"]);
-                $('[id$="VIN"]').text(grid.getRowData(id)["VehicleVIN"]);
-                $('[id$="LossLocationLabel"]').text(grid.getRowData(id)["LossLocation"]);
-                $('[id$="LossDateLabel"]').text(grid.getRowData(id)["LossDate"]);
-                $('[id$="LossTimeLabel"]').text(grid.getRowData(id)["LossTime"]);
 
-                var grid = jQuery("#<%= JQGrid1.ClientID %>");
-                var image = grid.getRowData(id)["LossImage"];                
+        function getRowData(id) {
+            
+            var gridLoss = jQuery("#<%= JQGrid1.ClientID %>");
+            document.getElementById('ctl00_MainContent_PolicyNumberLabel').innerText = gridLoss.getRowData(id)["PolicyKey"];
+            document.getElementById('ctl00_MainContent_VehicleMakeLabel').innerText = gridLoss.getRowData(id)["VehicleMake"];
+            document.getElementById('ctl00_MainContent_VehicleModelLabel').innerText = gridLoss.getRowData(id)["VehicleModel"];
+            document.getElementById('ctl00_MainContent_VehicleColorLabel').innerText = gridLoss.getRowData(id)["VehicleColorLabel"];
+            document.getElementById('ctl00_MainContent_VINLabel').innerText = gridLoss.getRowData(id)["VehicleVIN"];
+            document.getElementById('ctl00_MainContent_LossLocationLabel').innerText = gridLoss.getRowData(id)["LossLocation"];
+            document.getElementById('ctl00_MainContent_LossDateLabel').innerText = gridLoss.getRowData(id)["LossDate"];
+            document.getElementById('ctl00_MainContent_LossTimeLabel').innerText = gridLoss.getRowData(id)["LossTime"];
+            
+
+                //$('[id$="PolicyNumberLabel"]').text(gridLoss.getRowData(id)["PolicyKey"]);
+                //$('[id$="VehicleMakeLabel"]').text(gridLoss.getRowData(id)["VehicleMake"]);
+                //$('[id$="VehicleModelLabel"]').text(gridLoss.getRowData(id)["VehicleModel"]);
+                //$('[id$="VehicleColorLabel"]').text(gridLoss.getRowData(id)["VehicleColor"]);
+                //$('[id$="VINLabel"]').text(gridLoss.getRowData(id)["VehicleVIN"]);
+                //$('[id$="LossLocationLabel"]').text(gridLoss.getRowData(id)["LossLocation"]);
+                //$('[id$="LossDateLabel"]').text(gridLoss.getRowData(id)["LossDate"]);
+                //$('[id$="LossTimeLabel"]').text(gridLoss.getRowData(id)["LossTime"]);
+
+
+                var image = gridLoss.getRowData(id)["LossImage"];                
                 $('[id*="img1"]')[0].src = image;
-                $('[id*="anchor1"]')[0].href = image;                
-                var stream = grid.getRowData(id)["LossAudio"];  
+                $('[id*="anchor1"]')[0].href = image;
+                var stream = gridLoss.getRowData(id)["LossAudio"];  
                 var type = "";
 
                 var audio = $("#audio1");
@@ -152,7 +164,7 @@
     <div id="tabs-4">
 		<p>
         <asp:Label ID="PolicyNumberCaption" runat="server" Text="Policy Number:"></asp:Label>
-         <asp:Label ID="PolicyNumber" runat="server" Text=""></asp:Label>        
+         <asp:Label ID="PolicyNumberLabel" runat="server" Text=""></asp:Label>        
         </p>
 		<p>
         <asp:Label ID="VehicleMakeCaption" runat="server" Text="Vehicle Make:"></asp:Label>
@@ -164,11 +176,11 @@
         </p>
         <p>
         <asp:Label ID="VINCaption" runat="server" Text="VIN:"></asp:Label>
-         <asp:Label ID="VIN" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="VINLabel" runat="server" Text=""></asp:Label>  
         </p>
         <p>
         <asp:Label ID="VehicleColorCaption" runat="server" Text="Vehicle Color:"></asp:Label>
-         <asp:Label ID="VehicleColor" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="VehicleColorLabel" runat="server" Text=""></asp:Label>  
         </p>
 	</div>
 </div>
