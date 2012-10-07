@@ -7,6 +7,7 @@ Public Class FileUploadController
 
     '
     ' GET: /FileUpload/Details/5
+    <HttpPost()>
     Function UploadImage(ByVal images As List(Of String)) As ActionResult
         CreateDirectory("~/App_Data/Image/")
         Dim filePaths = New List(Of String)
