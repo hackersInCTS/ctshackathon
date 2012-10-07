@@ -32,15 +32,6 @@ Partial Public Class Site
     Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
 
     '''<summary>
-    '''HeadLoginView control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents HeadLoginView As Global.System.Web.UI.WebControls.LoginView
-
-    '''<summary>
     '''NavigationMenu control.
     '''</summary>
     '''<remarks>

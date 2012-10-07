@@ -60,9 +60,49 @@ Jqgrid1 control.
 Auto-generated field.
 To modify move field declaration from designer file to code-behind file.
 </remarks>
-</member><member name="F:Parse.Data.UI._Default.Jqgrid2">
+</member><member name="F:Parse.Data.UI._Default.LossLocationCaption">
 	<summary>
-Jqgrid2 control.
+LossLocationCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.LossLocation">
+	<summary>
+LossLocation control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.LossDateCaption">
+	<summary>
+LossDateCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.LossDate">
+	<summary>
+LossDate control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.LossTimeCaption">
+	<summary>
+LossTimeCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.LossTime">
+	<summary>
+LossTime control.
 </summary>
 	<remarks>
 Auto-generated field.
@@ -79,6 +119,86 @@ To modify move field declaration from designer file to code-behind file.
 </member><member name="F:Parse.Data.UI._Default.img1">
 	<summary>
 img1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.PolicyNumberCaption">
+	<summary>
+PolicyNumberCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.PolicyNumber">
+	<summary>
+PolicyNumber control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleMakeCaption">
+	<summary>
+VehicleMakeCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleMake">
+	<summary>
+VehicleMake control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleModelCaption">
+	<summary>
+VehicleModelCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleModel">
+	<summary>
+VehicleModel control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VINCaption">
+	<summary>
+VINCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VIN">
+	<summary>
+VIN control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleColorCaption">
+	<summary>
+VehicleColorCaption control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI._Default.VehicleColor">
+	<summary>
+VehicleColor control.
 </summary>
 	<remarks>
 Auto-generated field.

@@ -1,21 +1,46 @@
 ﻿Imports System.Runtime.Serialization
 
 <DataContract()>
-Public Class ImageResponse
+Public Class LossDetailResponse
     <DataMember()>
-    Public Property Results As List(Of Image)
+    Public Property Results As List(Of LossDetail)
 
 
 End Class
 
 <DataContract()>
-Public Class Image
+Public Class LossDetail
     <DataMember()>
-    Public Property item As String
+    Public Property PolicyKey As String
     <DataMember()>
-    Public Property createdAt As String
+    Public Property VehicleMake As String
     <DataMember()>
-    Public Property updatedAt As String
+    Public Property VehicleModel As String
+    <DataMember()>
+    Public Property VehicleVIN As String
+    <DataMember()>
+    Public Property VehicleColor As String
+    <DataMember()>
+    Public Property Driver As String
+    <DataMember()>
+    Public Property PrimaryInsured As String
+    <DataMember()>
+    Public Property LossDetailsText As String
+    <DataMember()>
+    Public Property LossLocation As String
+    <DataMember()>
+    Public Property LossDate As String
+    <DataMember()>
+    Public Property LossTime As String
+    <DataMember()>
+    Public Property LossImages As String()
+    <DataMember()>
+    Public Property LossAudio As String
+    <DataMember()>
+    Public Property CreatedAt As String
+    <DataMember()>
+    Public Property UpdatedAt As String
     <DataMember()>
     Public Property objectId As String
+
 End Class

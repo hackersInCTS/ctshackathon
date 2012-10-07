@@ -107,6 +107,7 @@
     <Content Include="Images\right.gif" />
     <Content Include="Images\rightw.gif" />
     <Content Include="Images\Sunset.jpg" />
+    <Content Include="Images\swoosh.png" />
     <Content Include="Images\Water lilies.jpg" />
     <Content Include="Images\Winter.jpg" />
     <Content Include="Scripts\i18n\grid.locale-ar.js" />

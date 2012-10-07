@@ -9,28 +9,28 @@ Public Class _Default
     Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim request As New ParseRequest("https://api.parse.com/1/classes/Image")
-        Dim ds = request.GetResponse(Of ImageResponse)().Results
+        Dim request As New ParseRequest("https://api.parse.com/1/classes/LossDetails")
+        Dim ds = request.GetResponse(Of LossDetailResponse)().Results
         Jqgrid1.DataSource = ds
         Jqgrid1.DataBind()
 
-        request = New ParseRequest("https://api.parse.com/1/classes/Audio")
+        'request = New ParseRequest("https://api.parse.com/1/classes/Audio")
 
-        Dim data = request.GetResponse(Of AudioResponse)().Results
-        For Each item In data
-            Dim path = String.Format("~/App_Data/{0}", item.name)
-            Using writer = New System.IO.FileStream(Server.MapPath(path), FileMode.Create)
-                Dim bytes = Convert.FromBase64String(item.stream.Substring("data:video/3gpp;base64,".Length))
-                writer.Write(bytes, 0, bytes.Length)
-                writer.Flush()
-            End Using
+        'Dim data = request.GetResponse(Of AudioResponse)().Results
+        'For Each item In data
+        '    Dim path = String.Format("~/App_Data/{0}", item.name)
+        '    Using writer = New System.IO.FileStream(Server.MapPath(path), FileMode.Create)
+        '        Dim bytes = Convert.FromBase64String(item.stream.Substring("data:video/3gpp;base64,".Length))
+        '        writer.Write(bytes, 0, bytes.Length)
+        '        writer.Flush()
+        '    End Using
 
-            item.stream = VirtualPathUtility.ToAbsolute(path)
-        Next
+        '    item.stream = VirtualPathUtility.ToAbsolute(path)
+        'Next
 
 
-        Jqgrid2.DataSource = data
-        Jqgrid2.DataBind()
+        'Jqgrid2.DataSource = data
+        'Jqgrid2.DataBind()
 
 
         'Dim image = ds(0).item

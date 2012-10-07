@@ -26,13 +26,21 @@
     <cc1:JQGrid ID="Jqgrid1" runat="server">
     <ClientSideEvents  RowSelect="getRowData"/>
     <Columns>
-        <cc1:JQGridColumn DataField="objectId"></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="createdAt"></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="updatedAt"></cc1:JQGridColumn>
-        <cc1:JQGridColumn DataField="item" Visible=false ></cc1:JQGridColumn>
+        
+        <cc1:JQGridColumn DataField="PolicyKey"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossLocation"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossDate"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossTime"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleMake"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleModel"  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleColor" Visible=false  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="VehicleVIN" Visible=false  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossAudio" Visible=false  ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="LossImages" Visible=false ></cc1:JQGridColumn>
+        
     </Columns>
     </cc1:JQGrid>
-    Audio:
+    <%--Audio:
     <cc1:JQGrid ID="Jqgrid2" runat="server">
     <ClientSideEvents  RowSelect="getAudioData"/>
     <Columns>
@@ -42,7 +50,7 @@
         <cc1:JQGridColumn DataField="stream" Visible=false ></cc1:JQGridColumn>
         <cc1:JQGridColumn DataField="type"  ></cc1:JQGridColumn>
     </Columns>
-    </cc1:JQGrid>
+    </cc1:JQGrid>--%>
     <script>
         $(function () {
             $("#tabs").tabs();
@@ -51,14 +59,30 @@
             $('#photos a').Chocolat();
 
         });
-       
-        function getRowData(id) {
-            
-                var grid = jQuery("#<%= JQGrid1.ClientID %>");
 
-                var image = grid.getRowData(id)["item"];                
+        function getRowData(id) {            
+                var grid = jQuery("#<%= JQGrid1.ClientID %>");
+                $('[id$="PolicyNumber"]').text(grid.getRowData(id)["PolicyKey"]);
+                $('[id$="VehicleMake"]').text(grid.getRowData(id)["VehicleMake"]);
+                $('[id$="VehicleModel"]').text(grid.getRowData(id)["VehicleModel"]);
+                $('[id$="VehicleColor"]').text(grid.getRowData(id)["VehicleColor"]);
+                $('[id$="VIN"]').text(grid.getRowData(id)["VehicleVIN"]);
+                $('[id$="LossLocation"]').text(grid.getRowData(id)["LossLocation"]);
+                $('[id$="LossDate"]').text(grid.getRowData(id)["LossDate"]);
+                $('[id$="LossTime"]').text(grid.getRowData(id)["LossTime"]);
+
+                var grid = jQuery("#<%= JQGrid1.ClientID %>");
+                var image = grid.getRowData(id)["LossImage"];                
                 $('[id*="img1"]')[0].src = image;
-                $('[id*="anchor1"]')[0].href = image;
+                $('[id*="anchor1"]')[0].href = image;                
+                var stream = grid.getRowData(id)["LossAudio"];  
+                var type = "";
+
+                var audio = $("#audio1");
+                audio.attr("src", stream).attr("type", type);
+                /****************/
+                audio[0].load();
+                audio[0].play();
 //                debugger;
 //                $.ajax({
 //                    type: "POST",
@@ -74,20 +98,7 @@
 //                });
             
         }
-        function getAudioData(id) {
-          
-                var grid = jQuery("#<%= JQGrid2.ClientID %>");
-                var stream = "~/App_Data/recording1597205431.3gpp";
-                var type = grid.getRowData(id)["type"];
-
-                debugger;
-                var audio = $("#audio1");
-                audio.attr("src", stream).attr("type", type);
-                /****************/
-                audio[0].load();
-                audio[0].play();
-           
-        }
+        
 	</script>
 
 
@@ -103,8 +114,18 @@
 	</ul>
 	<div id="tabs-1">
 		<p>
-        
+        <asp:Label ID="LossLocationCaption" runat="server" Text="Loss Location:"></asp:Label>
+         <asp:Label ID="LossLocation" runat="server" Text=""></asp:Label>        
         </p>
+		<p>
+        <asp:Label ID="LossDateCaption" runat="server" Text="Loss Date:"></asp:Label>
+         <asp:Label ID="LossDate" runat="server" Text=""></asp:Label>  
+        </p>
+        <p>
+        <asp:Label ID="LossTimeCaption" runat="server" Text="Loss Time:"></asp:Label>
+         <asp:Label ID="LossTime" runat="server" Text=""></asp:Label>  
+        </p>
+        
 	</div>
 	<div id="tabs-2">
 		<p id="photos">
@@ -120,11 +141,29 @@
         <source src="recording-12949505.3gpp" type="audio/3gpp" />
         </audio>
         </p>
-		
+        
 	</div>
     <div id="tabs-4">
-		<p></p>
-		<p></p>
+		<p>
+        <asp:Label ID="PolicyNumberCaption" runat="server" Text="Policy Number:"></asp:Label>
+         <asp:Label ID="PolicyNumber" runat="server" Text=""></asp:Label>        
+        </p>
+		<p>
+        <asp:Label ID="VehicleMakeCaption" runat="server" Text="Vehicle Make:"></asp:Label>
+         <asp:Label ID="VehicleMake" runat="server" Text=""></asp:Label>  
+        </p>
+        <p>
+        <asp:Label ID="VehicleModelCaption" runat="server" Text="Vehicle Model:"></asp:Label>
+         <asp:Label ID="VehicleModel" runat="server" Text=""></asp:Label>  
+        </p>
+        <p>
+        <asp:Label ID="VINCaption" runat="server" Text="VIN:"></asp:Label>
+         <asp:Label ID="VIN" runat="server" Text=""></asp:Label>  
+        </p>
+        <p>
+        <asp:Label ID="VehicleColorCaption" runat="server" Text="Vehicle Color:"></asp:Label>
+         <asp:Label ID="VehicleColor" runat="server" Text=""></asp:Label>  
+        </p>
 	</div>
 </div>
 
