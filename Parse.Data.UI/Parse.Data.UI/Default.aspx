@@ -22,7 +22,7 @@
 
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    Images:
+    <asp:Button ID="Button1" runat="server" Text="Refresh" OnClientClick="javascript:forceSort();" />
     <cc1:JQGrid ID="Jqgrid1" runat="server">
     <ClientSideEvents  RowSelect="getRowData"/>
     <Columns>
@@ -40,6 +40,8 @@
         
     </Columns>
     </cc1:JQGrid>
+    
+    
     <%--Audio:
     <cc1:JQGrid ID="Jqgrid2" runat="server">
     <ClientSideEvents  RowSelect="getAudioData"/>
@@ -52,6 +54,10 @@
     </Columns>
     </cc1:JQGrid>--%>
     <script>
+        function forceSort() {
+            var grid = $("#<%= JQGrid1.ClientID %>");
+            grid.sortGrid("LossDate", true);
+        }
         $(function () {
             $("#tabs").tabs();
         });
@@ -63,13 +69,13 @@
         function getRowData(id) {            
                 var grid = jQuery("#<%= JQGrid1.ClientID %>");
                 $('[id$="PolicyNumber"]').text(grid.getRowData(id)["PolicyKey"]);
-                $('[id$="VehicleMake"]').text(grid.getRowData(id)["VehicleMake"]);
-                $('[id$="VehicleModel"]').text(grid.getRowData(id)["VehicleModel"]);
+                $('[id$="VehicleMakeLabel"]').text(grid.getRowData(id)["VehicleMake"]);
+                $('[id$="VehicleModelLabel"]').text(grid.getRowData(id)["VehicleModel"]);
                 $('[id$="VehicleColor"]').text(grid.getRowData(id)["VehicleColor"]);
                 $('[id$="VIN"]').text(grid.getRowData(id)["VehicleVIN"]);
-                $('[id$="LossLocation"]').text(grid.getRowData(id)["LossLocation"]);
-                $('[id$="LossDate"]').text(grid.getRowData(id)["LossDate"]);
-                $('[id$="LossTime"]').text(grid.getRowData(id)["LossTime"]);
+                $('[id$="LossLocationLabel"]').text(grid.getRowData(id)["LossLocation"]);
+                $('[id$="LossDateLabel"]').text(grid.getRowData(id)["LossDate"]);
+                $('[id$="LossTimeLabel"]').text(grid.getRowData(id)["LossTime"]);
 
                 var grid = jQuery("#<%= JQGrid1.ClientID %>");
                 var image = grid.getRowData(id)["LossImage"];                
@@ -115,15 +121,15 @@
 	<div id="tabs-1">
 		<p>
         <asp:Label ID="LossLocationCaption" runat="server" Text="Loss Location:"></asp:Label>
-         <asp:Label ID="LossLocation" runat="server" Text=""></asp:Label>        
+         <asp:Label ID="LossLocationLabel" runat="server" Text=""></asp:Label>        
         </p>
 		<p>
         <asp:Label ID="LossDateCaption" runat="server" Text="Loss Date:"></asp:Label>
-         <asp:Label ID="LossDate" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="LossDateLabel" runat="server" Text=""></asp:Label>  
         </p>
         <p>
         <asp:Label ID="LossTimeCaption" runat="server" Text="Loss Time:"></asp:Label>
-         <asp:Label ID="LossTime" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="LossTimeLabel" runat="server" Text=""></asp:Label>  
         </p>
         
 	</div>
@@ -150,11 +156,11 @@
         </p>
 		<p>
         <asp:Label ID="VehicleMakeCaption" runat="server" Text="Vehicle Make:"></asp:Label>
-         <asp:Label ID="VehicleMake" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="VehicleMakeLabel" runat="server" Text=""></asp:Label>  
         </p>
         <p>
         <asp:Label ID="VehicleModelCaption" runat="server" Text="Vehicle Model:"></asp:Label>
-         <asp:Label ID="VehicleModel" runat="server" Text=""></asp:Label>  
+         <asp:Label ID="VehicleModelLabel" runat="server" Text=""></asp:Label>  
         </p>
         <p>
         <asp:Label ID="VINCaption" runat="server" Text="VIN:"></asp:Label>
