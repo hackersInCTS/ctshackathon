@@ -10,32 +10,70 @@ Public Class _Default
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Dim request As New ParseRequest("https://api.parse.com/1/classes/LossDetails")
-        Dim ds = request.GetResponse(Of LossDetailResponse)().Results
-        Jqgrid1.DataSource = ds
+        Dim lossDetails = request.GetResponse(Of LossDetailResponse)().Results
+        
+
+        request = New ParseRequest("https://api.parse.com/1/classes/SwooshDevice")
+        Dim swooshDevices = request.GetResponse(Of SwooshDeviceResponse)().Results
+
+        Dim listNew As New List(Of LossDetailsExtended)
+
+        
+
+        For Each detail As LossDetail In lossDetails
+            Dim gotMatch As Boolean
+            For Each device As SwooshDevice In swooshDevices
+                If detail.DeviceId = device.deviceId Then
+                    gotMatch = True
+                    listNew.Add(New LossDetailsExtended With {.GCMDeviceId = device.gcmDeviceId,
+                                                                                               .PolicyKey = detail.PolicyKey,
+                                                                                                 .VehicleMake = detail.VehicleMake,
+                                                                                                 .VehicleModel = detail.VehicleModel,
+                                                                                                 .VehicleVIN = detail.VehicleVIN,
+                                                                                                 .VehicleColor = detail.VehicleColor,
+                                                                                                 .Driver = detail.Driver,
+                                                                                                 .PrimaryInsured = detail.PrimaryInsured,
+                                                                                                 .LossDetailsText = detail.LossDetailsText,
+                                                                                                 .LossLocation = detail.LossLocation,
+                                                                                                 .LossDate = detail.LossDate,
+                                                                                                 .LossTime = detail.LossTime,
+                                                                                                 .LossImages = detail.LossImages,
+                                                                                                 .LossAudio = detail.LossAudio,
+                                                                                                 .CreatedAt = detail.CreatedAt,
+                                                                                                 .UpdatedAt = detail.UpdatedAt,
+                                                                                                 .objectId = detail.objectId,
+                                                                                                 .DeviceId = detail.DeviceId})
+                End If
+
+            Next
+            If Not gotMatch Then
+                listNew.Add(New LossDetailsExtended With {.GCMDeviceId = "",
+                                                                                               .PolicyKey = detail.PolicyKey,
+                                                                                                 .VehicleMake = detail.VehicleMake,
+                                                                                                 .VehicleModel = detail.VehicleModel,
+                                                                                                 .VehicleVIN = detail.VehicleVIN,
+                                                                                                 .VehicleColor = detail.VehicleColor,
+                                                                                                 .Driver = detail.Driver,
+                                                                                                 .PrimaryInsured = detail.PrimaryInsured,
+                                                                                                 .LossDetailsText = detail.LossDetailsText,
+                                                                                                 .LossLocation = detail.LossLocation,
+                                                                                                 .LossDate = detail.LossDate,
+                                                                                                 .LossTime = detail.LossTime,
+                                                                                                 .LossImages = detail.LossImages,
+                                                                                                 .LossAudio = detail.LossAudio,
+                                                                                                 .CreatedAt = detail.CreatedAt,
+                                                                                                 .UpdatedAt = detail.UpdatedAt,
+                                                                                                 .objectId = detail.objectId,
+                                                                                                 .DeviceId = detail.DeviceId})
+            End If
+
+        Next
+
+
+
+        Jqgrid1.DataSource = listNew
         Jqgrid1.DataBind()
 
-        'request = New ParseRequest("https://api.parse.com/1/classes/Audio")
-
-        'Dim data = request.GetResponse(Of AudioResponse)().Results
-        'For Each item In data
-        '    Dim path = String.Format("~/App_Data/{0}", item.name)
-        '    Using writer = New System.IO.FileStream(Server.MapPath(path), FileMode.Create)
-        '        Dim bytes = Convert.FromBase64String(item.stream.Substring("data:video/3gpp;base64,".Length))
-        '        writer.Write(bytes, 0, bytes.Length)
-        '        writer.Flush()
-        '    End Using
-
-        '    item.stream = VirtualPathUtility.ToAbsolute(path)
-        'Next
-
-
-        'Jqgrid2.DataSource = data
-        'Jqgrid2.DataBind()
-
-
-        'Dim image = ds(0).item
-        'anchor1.Attributes("href") = image
-        'img1.Src = image
     End Sub
     <WebMethod()>
     Public Function SaveImage(ByVal objectKey As String, ByVal metadata As String) As String

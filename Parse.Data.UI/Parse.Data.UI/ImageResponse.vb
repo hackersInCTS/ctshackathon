@@ -42,5 +42,7 @@ Public Class LossDetail
     Public Property UpdatedAt As String
     <DataMember()>
     Public Property objectId As String
+    <DataMember()>
+    Public Property DeviceId As String
 
 End Class

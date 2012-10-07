@@ -37,6 +37,7 @@
         <cc1:JQGridColumn DataField="VehicleVIN" Visible="false"  ></cc1:JQGridColumn>
         <cc1:JQGridColumn DataField="LossAudio" Visible="false"  ></cc1:JQGridColumn>
         <cc1:JQGridColumn DataField="LossImages" Visible="false" ></cc1:JQGridColumn>
+        <cc1:JQGridColumn DataField="GCMDeviceId" Visible="false" ></cc1:JQGridColumn>
         
     </Columns>
     </cc1:JQGrid>
@@ -68,7 +69,7 @@
 
 
         function getRowData(id) {
-            
+            debugger;
             var gridLoss = jQuery("#<%= JQGrid1.ClientID %>");
             document.getElementById('ctl00_MainContent_PolicyNumberLabel').innerText = gridLoss.getRowData(id)["PolicyKey"];
             document.getElementById('ctl00_MainContent_VehicleMakeLabel').innerText = gridLoss.getRowData(id)["VehicleMake"];
@@ -78,6 +79,7 @@
             document.getElementById('ctl00_MainContent_LossLocationLabel').innerText = gridLoss.getRowData(id)["LossLocation"];
             document.getElementById('ctl00_MainContent_LossDateLabel').innerText = gridLoss.getRowData(id)["LossDate"];
             document.getElementById('ctl00_MainContent_LossTimeLabel').innerText = gridLoss.getRowData(id)["LossTime"];
+            document.getElementById('ctl00_MainContent_DeviceKeyTextArea').value = gridLoss.getRowData(id)["GCMDeviceId"];
             
 
                 //$('[id$="PolicyNumberLabel"]').text(gridLoss.getRowData(id)["PolicyKey"]);
@@ -129,6 +131,7 @@
 		<li><a href="#tabs-2">Photos</a></li>
         <li><a href="#tabs-3">Audio Notes</a></li>
         <li><a href="#tabs-4">Policy Information</a></li>
+        <li><a href="#tabs-5">Notification Details</a></li>
 	</ul>
 	<div id="tabs-1">
 		<p>
@@ -181,6 +184,14 @@
         <p>
         <asp:Label ID="VehicleColorCaption" runat="server" Text="Vehicle Color:"></asp:Label>
          <asp:Label ID="VehicleColorLabel" runat="server" Text=""></asp:Label>  
+        </p>
+	</div>
+    <div id="tabs-5">
+		<p id="p1">
+        
+	    <asp:Label ID="DeviceKey" runat="server" Text="Device Key"></asp:Label>
+         
+	    <asp:TextBox id="DeviceKeyTextArea" runat="server" Rows="5" ></asp:TextBox>
         </p>
 	</div>
 </div>
