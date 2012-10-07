@@ -8,13 +8,7 @@ Public Class GetLastImage
         Dim folderPath = Server.MapPath(String.Format("~/App_Data/{0}/", Request("Directory")))
         Dim lastUpdatedFile = (New DirectoryInfo(folderPath)).GetFiles().OrderByDescending(Function(file) file.LastWriteTime).FirstOrDefault()
         If lastUpdatedFile IsNot Nothing Then
-            Try
-                Response.ContentType = "application/octet-stream"
-                Response.AppendHeader("Content-Disposition", "attachment; filename=" + lastUpdatedFile.Name)
-                Response.TransmitFile(lastUpdatedFile.FullName)
-                Response.End()
-            Catch ex As ThreadAbortException
-            End Try
+            ImageLast.ImageUrl = VirtualPathUtility.ToAppRelative(lastUpdatedFile.FullName)
         End If
     End Sub
 

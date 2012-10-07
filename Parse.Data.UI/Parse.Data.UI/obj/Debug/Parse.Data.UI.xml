@@ -6,15 +6,7 @@ Parse.Data.UI
 </name>
 </assembly>
 <members>
-<member name="F:Parse.Data.UI.GetLastImage.form1">
-	<summary>
-form1 control.
-</summary>
-	<remarks>
-Auto-generated field.
-To modify move field declaration from designer file to code-behind file.
-</remarks>
-</member><member name="P:Parse.Data.UI.My.MyWebExtension.Application">
+<member name="P:Parse.Data.UI.My.MyWebExtension.Application">
 	<summary>
  Returns information about the current application.
  </summary>
@@ -76,6 +68,22 @@ To modify move field declaration from designer file to code-behind file.
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="F:Parse.Data.UI.GetLastImage.form1">
+	<summary>
+form1 control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
+</member><member name="F:Parse.Data.UI.GetLastImage.ImageLast">
+	<summary>
+ImageLast control.
+</summary>
+	<remarks>
+Auto-generated field.
+To modify move field declaration from designer file to code-behind file.
+</remarks>
 </member><member name="F:Parse.Data.UI.ChangePassword.ChangeUserPassword">
 	<summary>
 ChangeUserPassword control.
