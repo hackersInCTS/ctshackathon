@@ -10,6 +10,7 @@ Public Class FileUploadController
     Function UploadImage() As ActionResult
         Try
             CreateDirectory("~/App_Data/Image/")
+            Dim filePaths = New List(Of String)
             For Each item As HttpPostedFileBase In Request.Files
                 Dim filePath = String.Format("~/App_Data/Image/{0}_{1}", Guid.NewGuid(), item.FileName)
 
@@ -18,8 +19,11 @@ Public Class FileUploadController
                     destination.Flush()
                     destination.Close()
                 End Using
+
+                filePaths.Add(filePath)
             Next
 
+            Return Json(filePaths)
         Catch ex As Exception
             Return Json(ex.Message)
         End Try
