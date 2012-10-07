@@ -8,7 +8,7 @@ Public Class GetLastImage
         Dim folderPath = Server.MapPath(String.Format("~/App_Data/{0}/", Request("Directory")))
         Dim lastUpdatedFile = (New DirectoryInfo(folderPath)).GetFiles().OrderByDescending(Function(file) file.LastWriteTime).FirstOrDefault()
         If lastUpdatedFile IsNot Nothing Then
-            ImageLast.ImageUrl = VirtualPathUtility.ToAppRelative(lastUpdatedFile.FullName)
+            ImageLast.ImageUrl = String.Format("~/App_Data/{0}/{1}", Request("Directory"), lastUpdatedFile.Name)
         End If
     End Sub
 
