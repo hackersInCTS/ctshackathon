@@ -110,6 +110,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="GetLastImage.aspx" />
     <Content Include="Images\Blue hills.jpg" />
     <Content Include="Images\close.gif" />
     <Content Include="Images\closew.gif" />
@@ -243,6 +244,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="FileUploader.vb" />
+    <Compile Include="GetLastImage.aspx.designer.vb">
+      <DependentUpon>GetLastImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetLastImage.aspx.vb">
+      <DependentUpon>GetLastImage.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
